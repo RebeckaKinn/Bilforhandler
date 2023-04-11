@@ -26,12 +26,9 @@
             }
         }
 
-        public void ShowDealerCars()
+        public List<Car> ShowDealerCars()
         {
-            foreach (Car car in Cars)
-            {
-                Console.WriteLine($"{car.GetModel()} {car.GetYear()}, {car.GetRegistration()}, KM: {car.GetKM()}");
-            }
+            return Cars;
         }
 
         public List<Car> ShowOldCars(int year)
