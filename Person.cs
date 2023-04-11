@@ -34,20 +34,24 @@
             }
         }
 
-        public void ShowOldCars(int year)
+        public List<Car> ShowOldCars(int year)
         {
+            List<Car> OldCarsList = new List<Car>();
             foreach (Car car in Cars)
             {
-                if (car.GetYear() > year) Console.WriteLine($"{car.GetModel()} {car.GetYear()}, {car.GetRegistration()}, KM: {car.GetKM()}");
+                if (car.GetYear() > year) OldCarsList.Add(car);
             }
+            return OldCarsList;
         }
 
-        public void ShowDrivenCars(int km)
+        public List<Car> ShowDrivenCars(int km)
         {
+            List<Car> HighKmCars = new List<Car>();
             foreach (Car car in Cars)
             {
-                if (car.GetKM() > km) Console.WriteLine($"{car.GetModel()} {car.GetYear()}, {car.GetRegistration()}, KM: {car.GetKM()}");
+                if (car.GetKM() > km) HighKmCars.Add(car);
             }
+            return HighKmCars;
         }
 
         public string GetName()
